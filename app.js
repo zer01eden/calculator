@@ -1,19 +1,23 @@
 'use strict';
 
-function add(a, b) {
-	return a + b;
-}
-var userNum1 = Number(prompt('add first number', 'write only number'));
-var userNum2 = Number(prompt('add your second number', 'write only number'));
+//i try use IIFE
 
-var sum = add(userNum1, userNum2);
+(function () {
+	function add(a, b) {
+		return a + b;
+	}
+	var userNum1 = Number(prompt('add first number', 'write only number'));
+	var userNum2 = Number(prompt('add your second number', 'write only number'));
 
-if (sum) {
-	alert(`your result is: ${sum}`);
-} else {
-	if (sum === 0) {
+	var sum = add(userNum1, userNum2);
+
+	if (sum) {
 		alert(`your result is: ${sum}`);
 	} else {
-		alert(`you add wrong data, try again`);
+		if (sum === 0) {
+			alert(`your result is: ${sum}`);
+		} else {
+			alert(`you add wrong data, try again`);
+		}
 	}
-}
+})();
