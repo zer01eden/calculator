@@ -8,7 +8,7 @@
 	function add(a, b) {
 		return a + b;
 	}
-	function showResult() {
+	function showResult(sum) {
 		if (sum) {
 			alert(`your result is: ${sum}`);
 		} else {
@@ -19,11 +19,16 @@
 			}
 		}
 	}
+	function getNumberFromUser() {
+		var userNum = Number(prompt('add number', 'write only number'));
+		return userNum;
+	}
 
-	var userNum1 = Number(prompt('add first number', 'write only number'));
-	var userNum2 = Number(prompt('add your second number', 'write only number'));
+	var result = 0;
 
-	var sum = add(userNum1, userNum2);
-
-	showResult();
+	for (var i = 0; i < numbersAmount; i++) {
+		var number = getNumberFromUser();
+		result = add(result, number);
+	}
+	showResult(result);
 })();
